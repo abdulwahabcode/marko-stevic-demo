@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marko Stevic · Malerarbeiten &amp; Laminatböden — Wien, Niederösterreich &amp; Burgenland</title>
+<meta name="description" content="Marko Stevic — Malerarbeiten innen & außen, Spachtelarbeiten und Laminatböden aus einer Hand. Persönlich, sauber und termintreu in Wien, Niederösterreich und dem Burgenland.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#F6F3EC;           /* 60% dominant */
+    --ivory-2:#FCFAF5;         /* card surface */
+    --teal:#14453D;            /* 30% secondary */
+    --teal-deep:#0C2924;       /* tinted dark (teal-mixed black) */
+    --teal-mid:#1E5A4F;        /* lightness step of teal */
+    --oak:#A06A35;             /* 10% accent only */
+    --oak-dark:#875A2A;        /* accent hover */
+    --oak-soft:#EFE2CB;        /* soft oak tint */
+    --ink:#22302B;             /* tinted text, never pure black */
+    --muted:#5D6A62;
+    --offwhite:#ECE9DF;        /* text on dark, never #FFF */
+    --on-dark-mut:#AEC2B6;
+    --wa:#3E7C4F;              /* muted WhatsApp green */
+    --wa-dark:#33663F;
+    --line:rgba(20,69,61,.15);
+    --shadow:0 18px 45px -18px rgba(12,41,36,.30);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--ivory);
+    line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+  section{padding:76px 0}
+  h1,h2,h3,.brand-name{font-family:'Manrope',sans-serif}
+
+  /* oak wood-grain signature strip */
+  .grain{height:6px;background:repeating-linear-gradient(90deg,#B98A56 0 46px,#A9743F 46px 53px,#C49A68 53px 112px,#96682F 112px 120px,#B98A56 120px 190px,#A9743F 190px 197px,#C49A68 197px 260px)}
+
+  /* ---------- header ---------- */
+  header{
+    position:fixed;inset:0 0 auto 0;z-index:50;
+    background:rgba(246,243,236,.93);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+  .brand-mark{width:40px;height:40px;flex:none;border-radius:10px;background:var(--teal);
+    color:var(--offwhite);display:flex;align-items:center;justify-content:center;
+    font-family:'Manrope';font-weight:800;font-size:.95rem;letter-spacing:.02em;position:relative}
+  .brand-mark::after{content:"";position:absolute;right:6px;bottom:6px;width:6px;height:6px;border-radius:50%;background:var(--oak)}
+  .brand-name{font-weight:800;font-size:1.18rem;letter-spacing:.01em;line-height:1.15}
+  .brand-name small{display:block;font-family:'Inter';font-weight:600;font-size:.6rem;letter-spacing:.26em;color:var(--muted);text-transform:uppercase}
+  .nav-links{display:none;gap:30px}
+  .nav-links a{text-decoration:none;color:var(--ink);font-size:.92rem;font-weight:500}
+  .nav-links a:hover{color:var(--oak)}
+  .nav-cta{display:none;align-items:center;gap:10px;text-decoration:none;background:var(--teal);color:var(--offwhite);
+    font-weight:600;font-size:.9rem;padding:11px 20px;border-radius:12px}
+  .nav-cta:hover{background:var(--oak)}
+  .nav-cta svg{width:16px;height:16px}
+  .burger{background:none;border:0;cursor:pointer;display:flex;flex-direction:column;gap:5px;padding:8px}
+  .burger span{display:block;width:26px;height:2px;background:var(--ink);border-radius:2px}
+  .mobile-menu{display:none;border-top:1px solid var(--line);padding:14px 22px 20px;background:var(--ivory)}
+  .mobile-menu.open{display:block}
+  .mobile-menu a{display:block;text-decoration:none;color:var(--ink);font-weight:600;padding:12px 0;border-bottom:1px solid var(--line)}
+  @media(min-width:860px){.nav-links{display:flex}.nav-cta{display:inline-flex}.burger,.mobile-menu{display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{padding:128px 0 70px;position:relative}
+  .hero-grid{display:grid;gap:44px;align-items:center}
+  @media(min-width:960px){.hero-grid{grid-template-columns:1.05fr .95fr}}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.76rem;font-weight:700;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--teal)}
+  .eyebrow::before{content:"";width:34px;height:3px;border-radius:2px;background:var(--oak)}
+  .hero h1{font-weight:800;font-size:clamp(2.35rem,6.4vw,3.8rem);
+    line-height:1.1;letter-spacing:-.015em;margin:18px 0 20px;color:var(--ink)}
+  .hero h1 .acc{color:var(--oak)}
+  .hero p.lead{font-size:1.08rem;color:var(--muted);max-width:32rem}
+  .hero p.lead strong{color:var(--ink)}
+  .hero-btns{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+  .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;
+    padding:15px 27px;border-radius:12px;font-size:1rem;transition:transform .15s ease,background .2s}
+  .btn:active{transform:scale(.98)}
+  .btn svg{width:19px;height:19px}
+  .btn-oak{background:var(--oak);color:#fff;box-shadow:0 14px 30px -12px rgba(160,106,53,.55)}
+  .btn-oak:hover{background:var(--oak-dark)}
+  .btn-wa-solid{background:var(--wa);color:#fff}
+  .btn-wa-solid:hover{background:var(--wa-dark)}
+  .btn-outline{border:2px solid var(--teal);color:var(--teal)}
+  .btn-outline:hover{background:var(--teal);color:var(--offwhite)}
+  .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{display:inline-flex;align-items:center;gap:8px;background:var(--ivory-2);border:1px solid var(--line);
+    border-radius:999px;padding:8px 16px;font-size:.85rem;font-weight:600;color:var(--teal)}
+  .chip i{width:8px;height:8px;border-radius:50%;background:var(--oak);flex:none}
+  .hero-media{position:relative}
+  .hero-media img{border-radius:18px;box-shadow:var(--shadow);aspect-ratio:4/3.4;object-fit:cover;width:100%}
+  .hero-badge{
+    position:absolute;left:18px;bottom:-22px;background:var(--teal-deep);color:var(--offwhite);
+    border-radius:14px;padding:16px 22px;box-shadow:var(--shadow);max-width:280px;
+  }
+  .hero-badge .tag{display:inline-block;background:var(--oak);color:#fff;font-size:.66rem;font-weight:700;
+    letter-spacing:.18em;text-transform:uppercase;padding:4px 10px;border-radius:6px;margin-bottom:10px}
+  .hero-badge strong{font-family:'Manrope';font-size:1.05rem;display:block;line-height:1.35}
+  .hero-badge small{color:var(--on-dark-mut);font-size:.8rem}
+
+  /* ---------- section headings ---------- */
+  .sec-head{max-width:640px;margin-bottom:46px}
+  .sec-head h2{font-weight:800;font-size:clamp(1.85rem,4.5vw,2.65rem);
+    line-height:1.16;letter-spacing:-.01em;margin:16px 0 14px}
+  .sec-head p{color:var(--muted);font-size:1.02rem}
+
+  /* ---------- leistungen ---------- */
+  .cards{display:grid;gap:20px;grid-template-columns:1fr}
+  @media(min-width:680px){.cards{grid-template-columns:1fr 1fr}}
+  @media(min-width:1020px){.cards{grid-template-columns:repeat(3,1fr)}}
+  .card{background:var(--ivory-2);border:1px solid var(--line);border-radius:16px;padding:30px 26px;
+    transition:transform .2s ease,box-shadow .2s ease}
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .card .ic{width:46px;height:46px;border-radius:12px;margin-bottom:18px;background:var(--teal);
+    display:flex;align-items:center;justify-content:center}
+  .card .ic svg{width:22px;height:22px;stroke:var(--offwhite);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{font-weight:800;font-size:1.22rem;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:.95rem}
+  .card-cta{background:var(--teal);border-color:var(--teal)}
+  .card-cta h3{color:var(--offwhite)}
+  .card-cta p{color:var(--on-dark-mut)}
+  .card-cta .ic{background:var(--oak)}
+  .serv-img{border-radius:16px;overflow:hidden;margin-top:28px;box-shadow:var(--shadow)}
+  .serv-img img{width:100%;aspect-ratio:21/8;object-fit:cover}
+  @media(max-width:680px){.serv-img img{aspect-ratio:16/10}}
+
+  /* ---------- warum marko ---------- */
+  .warum{background:var(--teal-deep);color:var(--offwhite);border-radius:22px;overflow:hidden;
+    display:grid;box-shadow:var(--shadow)}
+  @media(min-width:920px){.warum{grid-template-columns:1fr 1fr}}
+  .warum img{width:100%;height:100%;min-height:280px;object-fit:cover}
+  .warum-body{padding:clamp(30px,5vw,56px)}
+  .warum-body .eyebrow{color:var(--on-dark-mut)}
+  .warum-body h2{font-weight:800;font-size:clamp(1.8rem,4vw,2.5rem);
+    line-height:1.16;letter-spacing:-.01em;margin:16px 0 16px;color:var(--offwhite)}
+  .warum-body>p{color:var(--on-dark-mut);margin-bottom:22px}
+  .points{display:grid;gap:16px}
+  @media(min-width:560px){.points{grid-template-columns:1fr 1fr}}
+  .point{background:rgba(236,233,223,.06);border:1px solid rgba(236,233,223,.14);
+    border-radius:14px;padding:18px 18px 16px}
+  .point h3{font-size:1.02rem;font-weight:800;color:var(--offwhite);margin-bottom:6px;display:flex;align-items:center;gap:9px}
+  .point h3 i{width:8px;height:8px;border-radius:50%;background:var(--oak);flex:none}
+  .point p{color:var(--on-dark-mut);font-size:.88rem}
+  .stats{display:flex;flex-wrap:wrap;gap:14px 34px;margin-top:28px;padding-top:24px;border-top:1px solid rgba(236,233,223,.14)}
+  .stat b{display:block;font-family:'Manrope';font-weight:800;font-size:1.7rem;color:var(--offwhite);line-height:1.1}
+  .stat b span{color:var(--oak)}
+  .stat small{color:var(--on-dark-mut);font-size:.8rem;font-weight:600;letter-spacing:.04em}
+
+  /* ---------- galerie ---------- */
+  .gallery{display:grid;gap:18px;grid-template-columns:1fr 1fr}
+  @media(min-width:860px){.gallery{grid-template-columns:repeat(3,1fr)}}
+  .gallery figure{border-radius:16px;overflow:hidden;position:relative;box-shadow:var(--shadow)}
+  .gallery img{width:100%;height:100%;aspect-ratio:4/3.2;object-fit:cover;transition:transform .5s ease}
+  .gallery figure:hover img{transform:scale(1.05)}
+  .gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 18px 14px;color:#fff;
+    font-weight:600;font-size:.92rem;background:linear-gradient(transparent,rgba(9,32,28,.75))}
+
+  /* ---------- ablauf ---------- */
+  .ablauf{background:var(--oak-soft);border-radius:22px;padding:clamp(34px,5vw,60px)}
+  .steps{display:grid;gap:26px;margin-top:8px}
+  @media(min-width:860px){.steps{grid-template-columns:repeat(3,1fr)}}
+  .step{position:relative;background:var(--ivory-2);border-radius:16px;padding:30px 26px;border:1px solid var(--line)}
+  .step-num{font-family:'Manrope';font-size:2.5rem;color:var(--oak);font-weight:800;line-height:1;margin-bottom:14px}
+  .step h3{font-weight:800;font-size:1.22rem;margin-bottom:10px}
+  .step p{color:var(--muted);font-size:.95rem}
+
+  /* ---------- kontakt ---------- */
+  .kontakt{background:var(--teal-deep);color:var(--offwhite);border-radius:22px;
+    padding:clamp(36px,6vw,70px);text-align:center;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .kontakt .grain{position:absolute;left:0;right:0;top:0;opacity:.5}
+  .kontakt h2{font-weight:800;font-size:clamp(1.95rem,5vw,2.85rem);
+    letter-spacing:-.01em;margin:16px 0 14px;color:var(--offwhite)}
+  .kontakt p{color:var(--on-dark-mut);max-width:34rem;margin:0 auto}
+  .kontakt .eyebrow{color:var(--on-dark-mut)}
+  .kontakt .phone-num{display:block;font-family:'Manrope';font-weight:800;font-size:clamp(1.5rem,4.5vw,2.1rem);
+    color:var(--offwhite);text-decoration:none;margin:24px 0 4px}
+  .kontakt .phone-num:hover{color:var(--oak)}
+  .kontakt .wa-num{display:block;font-size:1rem;color:var(--on-dark-mut);text-decoration:none;font-weight:600}
+  .kontakt .wa-num:hover{color:var(--offwhite)}
+  .kontakt-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:28px}
+  .kontakt small{display:block;margin-top:24px;color:#7E948A;font-size:.85rem}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--ivory);padding:44px 0 110px;border-top:1px solid var(--line);margin-top:76px}
+  .foot{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+  @media(min-width:700px){.foot{flex-direction:row;justify-content:space-between;align-items:center}}
+  .foot p{font-size:.86rem;color:var(--muted)}
+  .foot p a{color:var(--teal);font-weight:600;text-decoration:none}
+
+  /* ---------- sticky whatsapp ---------- */
+  .wa-float{
+    position:fixed;right:20px;bottom:20px;z-index:60;width:60px;height:60px;border-radius:50%;
+    background:var(--wa);display:flex;align-items:center;justify-content:center;
+    box-shadow:0 14px 30px -8px rgba(51,102,63,.6);text-decoration:none;
+    transition:transform .15s ease,background .2s;
+  }
+  .wa-float:hover{background:var(--wa-dark);transform:scale(1.06)}
+  .wa-float svg{width:30px;height:30px;fill:#fff}
+  .wa-float::before{content:"";position:absolute;inset:-6px;border-radius:50%;
+    border:2px solid rgba(62,124,79,.45);animation:pulse 2.2s ease-out infinite}
+  @keyframes pulse{0%{transform:scale(.85);opacity:1}70%{transform:scale(1.12);opacity:0}100%{opacity:0}}
+  @media(prefers-reduced-motion:reduce){.wa-float::before{animation:none}}
+
+  /* ---------- reveal ---------- */
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .rv.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Marko Stevic – Startseite">
+      <span class="brand-mark" aria-hidden="true">MS</span>
+      <span class="brand-name">MARKO STEVIC<small>Maler &amp; Laminat</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#warum">Warum ich</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="tel:+436677609890">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Anrufen
+    </a>
+    <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#leistungen">Leistungen</a>
+    <a href="#warum">Warum ich</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#ablauf">Ablauf</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="rv in">
+        <span class="eyebrow">Maler &amp; Laminat · Wien · NÖ · Burgenland</span>
+        <h1>Neue Farbe. Neuer Boden. <span class="acc">Neues Zuhause.</span></h1>
+        <p class="lead">Ich bin <strong>Marko Stevic</strong> — Maler und Laminat-Spezialist. Ich streiche Ihre Räume und verlege Ihre Böden persönlich: sauber, termintreu und zum fairen Fixpreis.</p>
+        <div class="hero-btns">
+          <a class="btn btn-oak" href="tel:+436677609890">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Jetzt anrufen
+          </a>
+          <a class="btn btn-wa-solid" href="https://wa.me/436646331959" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.83 9.83 0 0 1 9.88 9.89c0 5.45-4.44 9.88-9.89 9.88M20.46 3.55A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.35"/></svg>
+            Per WhatsApp anfragen
+          </a>
+        </div>
+        <div class="hero-chips">
+          <span class="chip"><i></i>Kostenlose Besichtigung</span>
+          <span class="chip"><i></i>Fairer Fixpreis</span>
+          <span class="chip"><i></i>Ein Ansprechpartner</span>
+        </div>
+      </div>
+      <div class="hero-media rv in">
+        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1600&auto=format&fit=crop" alt="Marko Stevic streicht eine Innenwand mit der Farbrolle" loading="eager">
+        <div class="hero-badge">
+          <span class="tag">Direkt vom Chef</span>
+          <strong>Keine Subunternehmer, keine Warteschleife</strong>
+          <small>Marko Stevic — Ihr persönlicher Ansprechpartner, von der Beratung bis zur Übergabe.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- LEISTUNGEN -->
+  <section id="leistungen">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">Leistungen</span>
+        <h2>Malerei &amp; Boden — beides aus einer Hand.</h2>
+        <p>Warum zwei Firmen koordinieren, wenn es einer sauber erledigt? Ich übernehme Ihre Malerarbeiten und Ihren neuen Laminatboden — abgestimmt, zügig und ordentlich.</p>
+      </div>
+      <div class="cards">
+        <div class="card rv">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V9l6-5 6 5v11"/><path d="M10 20v-5h4v5"/></svg></div>
+          <h3>Malerarbeiten innen</h3>
+          <p>Wände, Decken und ganze Wohnungen in frischen Farben — deckend, gleichmäßig und mit sauberen Kanten.</p>
+        </div>
+        <div class="card rv">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M12 21v-6"/></svg></div>
+          <h3>Fassade &amp; Außen</h3>
+          <p>Wetterfeste Außenanstriche für Hauswände, Sockel und Geländer — Schutz und frische Optik in einem.</p>
+        </div>
+        <div class="card rv">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h13v13H4z"/><path d="M17 9h3v11h-3M4 20h16"/></svg></div>
+          <h3>Spachtel- &amp; Ausbesserung</h3>
+          <p>Risse, Dübellöcher und alte Schäden werden fachgerecht verspachtelt und geschliffen — glatt wie neu.</p>
+        </div>
+        <div class="card rv">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 19h16M4 19l3-9h10l3 9M7 10v9M12 10v9M17 10v9"/></svg></div>
+          <h3>Laminat verlegen</h3>
+          <p>Laminatböden in Wohn-, Schlaf- und Kinderzimmern — präzise zugeschnitten, mit Trittschalldämmung verlegt.</p>
+        </div>
+        <div class="card rv">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 20h16M4 20v-4h16v4M6 16v-3M18 16v-3"/></svg></div>
+          <h3>Sockelleisten &amp; Finish</h3>
+          <p>Passende Sockelleisten, Übergangsprofile und saubere Silikonfugen — damit der neue Boden perfekt abschließt.</p>
+        </div>
+        <div class="card card-cta rv">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <h3>Ihr Projekt?</h3>
+          <p>Schicken Sie mir einfach Fotos per WhatsApp — ich melde mich mit einer ehrlichen Einschätzung zurück.</p>
+        </div>
+      </div>
+      <div class="serv-img rv">
+        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=1600&auto=format&fit=crop" alt="Helles, frisch gestrichenes Wohnzimmer mit Holzboden" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- WARUM MARKO -->
+  <section id="warum" style="padding-top:0">
+    <div class="wrap">
+      <div class="warum rv">
+        <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=1400&auto=format&fit=crop" alt="Maler bei der Arbeit an einer Innenwand" loading="lazy">
+        <div class="warum-body">
+          <span class="eyebrow">Warum Marko</span>
+          <h2>Ein Mann. Ein Wort. Ein Ergebnis.</h2>
+          <p>Bei großen Firmen sind Sie eine Nummer im System. Bei mir nicht: Ich berate Sie selbst, ich führe die Arbeit selbst aus — und ich stehe mit meinem Namen für das Ergebnis gerade.</p>
+          <div class="points">
+            <div class="point">
+              <h3><i></i>Ein Ansprechpartner</h3>
+              <p>Von der ersten Nachricht bis zur Übergabe sprechen Sie immer mit mir persönlich.</p>
+            </div>
+            <div class="point">
+              <h3><i></i>Sauber &amp; geschützt</h3>
+              <p>Möbel und Böden werden sorgfältig abgedeckt und abgeklebt — übergeben wird besenrein.</p>
+            </div>
+            <div class="point">
+              <h3><i></i>Termintreu</h3>
+              <p>Fixe Termine statt vager Versprechen: Wenn ich einen Tag zusage, bin ich an dem Tag da.</p>
+            </div>
+            <div class="point">
+              <h3><i></i>Fairer Fixpreis</h3>
+              <p>Transparentes Angebot vor Arbeitsbeginn — ohne versteckte Kosten und ohne Überraschungen.</p>
+            </div>
+          </div>
+          <div class="stats">
+            <div class="stat"><b>2 <span>Gewerke</span></b><small>Malerei &amp; Boden aus einer Hand</small></div>
+            <div class="stat"><b>3 <span>Bundesländer</span></b><small>Wien · NÖ · Burgenland</small></div>
+            <div class="stat"><b>1 <span>Ansprechpartner</span></b><small>Marko Stevic — persönlich</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE -->
+  <section id="galerie" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">Galerie</span>
+        <h2>So sieht das Ergebnis aus.</h2>
+        <p>Frisch gestrichene Räume und sauber verlegte Laminatböden — ein Eindruck von meiner Arbeit.</p>
+      </div>
+      <div class="gallery">
+        <figure class="rv">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200&auto=format&fit=crop" alt="Modernes Wohnzimmer mit frisch gestrichenen Wänden" loading="lazy">
+          <figcaption>Wohnzimmer, frisch gestrichen</figcaption>
+        </figure>
+        <figure class="rv">
+          <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?q=80&w=1200&auto=format&fit=crop" alt="Verlegung eines Laminatbodens in Eichenoptik" loading="lazy">
+          <figcaption>Laminat verlegen</figcaption>
+        </figure>
+        <figure class="rv">
+          <img src="https://images.unsplash.com/photo-1567016432779-094069958ea5?q=80&w=1200&auto=format&fit=crop" alt="Schlafzimmer mit Laminatboden in Holzoptik" loading="lazy">
+          <figcaption>Schlafzimmer mit Holzboden</figcaption>
+        </figure>
+        <figure class="rv">
+          <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200&auto=format&fit=crop" alt="Essbereich mit Laminatboden und gestrichener Wand" loading="lazy">
+          <figcaption>Essbereich &amp; Boden</figcaption>
+        </figure>
+        <figure class="rv">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop" alt="Elegantes Wohnzimmer mit heller Wandgestaltung" loading="lazy">
+          <figcaption>Helle Wandgestaltung</figcaption>
+        </figure>
+        <figure class="rv">
+          <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop" alt="Heller Wohnraum mit Laminatboden" loading="lazy">
+          <figcaption>Wohnraum komplett erneuert</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABLAUF -->
+  <section id="ablauf" style="padding-top:0">
+    <div class="wrap">
+      <div class="ablauf rv">
+        <div class="sec-head">
+          <span class="eyebrow">Ablauf</span>
+          <h2>In drei Schritten zum fertigen Raum.</h2>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">01</div>
+            <h3>Anfrage &amp; Besichtigung</h3>
+            <p>Schreiben Sie mir per WhatsApp oder rufen Sie an. Gerne auch gleich mit Fotos — die Besichtigung ist kostenlos.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <h3>Fixpreis-Angebot</h3>
+            <p>Sie erhalten ein klares Angebot zum Fixpreis — inklusive Material, Arbeit und Termin. Keine versteckten Kosten.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <h3>Ausführung &amp; Übergabe</h3>
+            <p>Ich führe alles persönlich aus: sauber abgeklebt, termingerecht fertig — und ordentlich übergeben.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt" style="padding-top:0">
+    <div class="wrap">
+      <div class="kontakt rv">
+        <div class="grain" aria-hidden="true"></div>
+        <span class="eyebrow">Kontakt</span>
+        <h2>Projekt im Kopf? Einfach melden.</h2>
+        <p>Am schnellsten erreichen Sie mich per WhatsApp — gerne mit Fotos von Ihrem Raum. Ich antworte persönlich und unverbindlich.</p>
+        <a class="phone-num" href="tel:+436677609890">+43 667 7609890</a>
+        <a class="wa-num" href="https://wa.me/436646331959" target="_blank" rel="noopener">WhatsApp: +43 664 6331959</a>
+        <div class="kontakt-btns">
+          <a class="btn btn-oak" href="tel:+436677609890">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Anrufen
+          </a>
+          <a class="btn btn-wa-solid" href="https://wa.me/436646331959" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.83 9.83 0 0 1 9.88 9.89c0 5.45-4.44 9.88-9.89 9.88M20.46 3.55A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.35"/></svg>
+            WhatsApp schreiben
+          </a>
+        </div>
+        <small>Einsatzgebiet: Wien · Niederösterreich · Burgenland — Anfragen gerne jederzeit per WhatsApp</small>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="grain" aria-hidden="true"></div>
+<footer>
+  <div class="wrap foot">
+    <span class="brand-name" style="font-size:1.05rem">MARKO STEVIC</span>
+    <p>Marko Stevic · Malerarbeiten &amp; Laminatböden · Wien · Niederösterreich · Burgenland · Tel. <a href="tel:+436677609890">+43 667 7609890</a></p>
+    <p>© 2026 Marko Stevic</p>
+  </div>
+</footer>
+
+<!-- STICKY WHATSAPP -->
+<a class="wa-float" href="https://wa.me/436646331959" target="_blank" rel="noopener" aria-label="Per WhatsApp anfragen">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.83 9.83 0 0 1 9.88 9.89c0 5.45-4.44 9.88-9.89 9.88M20.46 3.55A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.35"/></svg>
+</a>
+
+<script>
+  // mobile menu
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', function(){
+    menu.classList.toggle('open');
+    burger.setAttribute('aria-label', menu.classList.contains('open') ? 'Menü schließen' : 'Menü öffnen');
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ menu.classList.remove('open'); });
+  });
+
+  // scroll reveal
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv:not(.in)').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
